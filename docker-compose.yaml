@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+    database:
+        image: 'mysql:latest'
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: projet_encheres
+        ports:
+            - '3306'
+    
+    mailer:
+        image: schickling/mailcatcher
+        ports: [1025, 1080]
+
+
