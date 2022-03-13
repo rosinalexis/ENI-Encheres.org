@@ -1,4 +1,4 @@
-# ENI-Encheres.org
+# ENI-Encheres.org (en cours de développement)
 
 L’association « Les objets sont nos amis » désire monter une plateforme web pour permettre
 la cession d’objets de seconde main sans échanges financiers. La valeur des articles sera
