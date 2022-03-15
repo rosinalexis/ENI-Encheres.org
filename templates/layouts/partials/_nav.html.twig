@@ -1,13 +1,26 @@
-<div class="container">
-	<nav>
+<div>
+	<nav class="container-fluid">
 		<ul>
 			<li>
-				<strong>ENI-Encheres</strong>
+				<a href="{{ path('app_home') }}">
+					<strong>ENI-Enchères</strong>
+				</a>
+
 			</li>
 		</ul>
 		<ul>
-			<li><a href="#">S'incricre</a></li>
-			<li><a href="#">Se connecter</a></li>
+			{% if app.user %}
+				<li>
+					<a href="{{ path('logout') }}">Déconnexion</a>
+				</li>
+			{% else %}
+				<li>
+					<a href="#">S'incrire</a>
+				</li>
+				<li>
+					<a href="{{path('app_login')}}">Se connecter</a>
+				</li>
+			{% endif %}
 		</ul>
 	</nav>
 </div>
