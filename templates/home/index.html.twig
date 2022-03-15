@@ -6,4 +6,30 @@
 
 {% block body %}
 	<div id="home" class="container"></div>
+
+	<div class="container">
+		<h1 class="mt-2 text-center text-uppercase">
+			Liste des enchères
+		</h1>
+
+		<div class="grid">
+			<div>
+				<label for="filtres">
+					<strong>Filtres:</strong>
+				</label>
+				<input type="search" name="filtres" id="filtres" placeholder="Search">
+
+				<label for="categorie">
+					<strong>Catégore:</strong>
+				</label>
+				<select id="categorie" required>
+					<option value="" selected>Toutes…</option>
+					<option>…</option>
+				</select>
+			</div>
+			<div>
+				<button class="mt-4 big-btn">Rechercher</button>
+			</div>
+		</div>
+	</div>
 {% endblock %}

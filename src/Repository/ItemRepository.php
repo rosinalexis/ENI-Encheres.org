@@ -45,6 +45,17 @@ class ItemRepository extends ServiceEntityRepository
         }
     }
 
+    public function findAllSoldItems()
+    {
+        return $this->createQueryBuilder('i')
+            ->andWhere('i.status =:val')
+            ->setParameter('val', "en cours")
+            ->orderBy('i.id', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Item[] Returns an array of Item objects
     //  */
