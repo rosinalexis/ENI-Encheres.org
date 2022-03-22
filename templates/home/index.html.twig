@@ -31,5 +31,20 @@
 				<button class="mt-4 big-btn">Rechercher</button>
 			</div>
 		</div>
+
+		{% if soldItems %}
+			<div class="grid">
+				{% for item in soldItems %}
+					<div>
+						<article>
+							<header>item.title</header>
+							item.description
+
+							<footer>{{date("${m/d/Y}")}}</footer>
+						</article>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
 	</div>
 {% endblock %}

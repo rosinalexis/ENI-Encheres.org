@@ -6,7 +6,7 @@ services:
             MYSQL_ROOT_PASSWORD: password
             MYSQL_DATABASE: projet_encheres
         ports:
-            - '3306'
+            - '59456:3306'
     
     mailer:
         image: schickling/mailcatcher

@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -37,6 +38,22 @@ body {
 
 .text-uppercase {
   text-transform: uppercase;
+}
+
+.error {
+  background-color: #ffcdd2;
+  color: #c0392b;
+  border: 1px solid #c0392b;
+  border-radius: 15px;
+  padding: 10px 10px;
+}
+
+.success {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+  border: 10px solid #2e7d32;
+  border-radius: 15px;
+  padding: 10px 10px;
 }
 
 #login-form {
