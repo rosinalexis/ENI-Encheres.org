@@ -24,7 +24,10 @@
 				</label>
 				<select id="categorie" required>
 					<option value="" selected>Toutes…</option>
-					<option>…</option>
+					{% for categorie in lstCategory %}
+						<option value="{{categorie.id}}">{{categorie.title}}</option>
+					{% endfor %}
+
 				</select>
 			</div>
 			<div>

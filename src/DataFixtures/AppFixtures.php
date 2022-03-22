@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Category;
 use App\Entity\User;
 use Faker\Factory;
 use Doctrine\Persistence\ObjectManager;
@@ -21,10 +22,11 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        $this->laodUser($manager);
+        $this->laodUsers($manager);
+        $this->loadCategories($manager);
     }
 
-    public function laodUser(ObjectManager $manager): void
+    public function laodUsers(ObjectManager $manager): void
     {
         for ($i = 0; $i < 5; $i++) {
             $user = new User;
@@ -40,6 +42,21 @@ class AppFixtures extends Fixture
                 ->setCity($this->faker->city())
                 ->setCredit(0);
             $manager->persist($user);
+
+            $this->setReference('user_' . $i, $user);
+        }
+
+        $manager->flush();
+    }
+
+    public function loadCategories(ObjectManager $manager): void
+    {
+        $lstCategories  = ['Appareil électroménager', 'Appareil électronique', 'Jouet', 'Ustensile', 'Meuble'];
+
+        foreach ($lstCategories as $category) {
+            $newCategory = new Category;
+            $newCategory->setTitle($category);
+            $manager->persist($newCategory);
         }
 
         $manager->flush();
