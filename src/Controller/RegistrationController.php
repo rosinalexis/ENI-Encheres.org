@@ -29,6 +29,7 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
+            //intialisation du crédit de l'utilisateur
             $user->setCredit(0);
             $user->setRoles(['ROLE_USER']);
 

@@ -18,7 +18,9 @@ class RegistrationFormType extends AbstractType
     {
         $builder
             ->add('email')
+            ->add('nickName', null, ['label' => 'Pseudo'])
             ->add('agreeTerms', CheckboxType::class, [
+
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -42,8 +44,7 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
